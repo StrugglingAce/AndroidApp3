@@ -1,0 +1,15 @@
+# AI Reflection - Treasure Hunt Assignment
+
+## 1. How Did You Use AI in This Assignment?
+*   **Summary of Use:** I used AI primarily as a tutor and coding assistant for areas of the Android architecture I was confused about. When I got stuck, I had the AI provide structural code and explain the underlying concepts, which I then carefully reviewed and applied to my project.
+*   **Examples of Process:** 
+    *   *Prompt used:* I was confused by the Android permission system, so I asked: *"is there no way i can have it that when it opens and asks me to verify location, can it not just directly validate? must it ask me ask me to give permisson first."*
+    *   *Change made:* The AI explained the Android 6.0+ security rules. Based on that explanation, I integrated the `FusedLocationProviderClient` code but tied the permission request to a button click to make the user experience better.
+
+## 2. How Did You Understand, Verify, and Adapt the Code?
+*   **Verification:** I verified the AI-generated code by compiling the app and running it on the emulator. I reviewed the AI's step-by-step explanations of the `Location.distanceBetween` math to ensure I understood how the validation worked before integrating it. 
+*   **Key Changes/Improvements:** Initially, the AI suggested code that asked for location permissions the moment the app opened, which caused a crash with the Maps SDK. I reviewed the logic and adapted the code so that the permission prompt and the location verification only happen *after* the user clicks the "I'm Here!" button, which fixed the crash and improved the app's flow.
+
+## 3. What Did You Learn or Get Better At Through This Work?
+*   **Leveled-Up Concept:** I significantly deepened my understanding of Android Runtime Permissions. By talking through the issue with the AI, I finally understood *why* apps can't just secretly validate GPS coordinates in the background and how to handle `SecurityExceptions`.
+*   **What Went Well / Didn't:** Building the visual map and clue cards using Jetpack Compose went incredibly well and felt much faster than the older View system. What didn't go well initially was fighting with the strictness of the Google Maps SDK and the permission popups, but debugging those crashes taught me a lot about Android's security requirements.
